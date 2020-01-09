@@ -1,4 +1,4 @@
-package com.datu.fanli.user.bean;
+package com.datu.fanli.member.bean;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -11,7 +11,7 @@ public class Member implements Serializable {
      *
      * @mbg.generated
      */
-    private Long id;
+    private String id;
 
     /**
      *
@@ -20,7 +20,7 @@ public class Member implements Serializable {
      *
      * @mbg.generated
      */
-    private Long memberLevelId;
+    private String memberLevelId;
 
     /**
      *
@@ -189,7 +189,7 @@ public class Member implements Serializable {
      *
      * @mbg.generated
      */
-    public Member(Long id, Long memberLevelId, String username, String password, String nickname, String phone, Integer status, Date createTime, String icon, Integer gender, Date birthday, String city, String job, String personalizedSignature, Integer sourceType, Integer integration, Integer growth, Integer luckeyCount, Integer historyIntegration) {
+    public Member(String id, String memberLevelId, String username, String password, String nickname, String phone, Integer status, Date createTime, String icon, Integer gender, Date birthday, String city, String job, String personalizedSignature, Integer sourceType, Integer integration, Integer growth, Integer luckeyCount, Integer historyIntegration) {
         this.id = id;
         this.memberLevelId = memberLevelId;
         this.username = username;
@@ -229,7 +229,7 @@ public class Member implements Serializable {
      *
      * @mbg.generated
      */
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
@@ -241,7 +241,7 @@ public class Member implements Serializable {
      *
      * @mbg.generated
      */
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -253,7 +253,7 @@ public class Member implements Serializable {
      *
      * @mbg.generated
      */
-    public Long getMemberLevelId() {
+    public String getMemberLevelId() {
         return memberLevelId;
     }
 
@@ -265,7 +265,7 @@ public class Member implements Serializable {
      *
      * @mbg.generated
      */
-    public void setMemberLevelId(Long memberLevelId) {
+    public void setMemberLevelId(String memberLevelId) {
         this.memberLevelId = memberLevelId;
     }
 

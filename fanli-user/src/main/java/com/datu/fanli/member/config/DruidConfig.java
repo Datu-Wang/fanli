@@ -1,4 +1,4 @@
-package com.datu.fanli.user.config;
+package com.datu.fanli.member.config;
 
 import com.alibaba.druid.pool.DruidDataSource;
 import com.alibaba.druid.support.http.StatViewServlet;

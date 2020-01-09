@@ -25,15 +25,15 @@
 		<!-- gem entity -->
 		<!-- data -->
 		<!--在此修改生成路径-->
-		<javaModelGenerator targetPackage="com.datu.fanli.user.bean"
+		<javaModelGenerator targetPackage="com.datu.fanli.member.bean"
 							targetProject="./src/main/java">
 			<property name="enableSubPackages" value="true" />
 			<property name="trimStrings" value="false" />
 			<property name="constructorBased" value="true"/>
 		</javaModelGenerator>
 
-		<sqlMapGenerator targetPackage ="com.datu.fanli.user.xml"
-						 targetProject ="./src/main/java">
+		<sqlMapGenerator targetPackage ="mapper"
+						 targetProject ="./src/main/resources">
 			<property name ="enableSubPackages" value =" true" />
 		</sqlMapGenerator>
 
@@ -42,7 +42,7 @@
 		<!-- data -->
 		<!--在此修改生成路径-->
 		<javaClientGenerator type="XMLMAPPER"
-							 targetPackage="com.datu.fanli.user.dao"
+							 targetPackage="com.datu.fanli.member.dao"
 							 targetProject="./src/main/java">
 			<property name="enableSubPackages" value="true" />
 		</javaClientGenerator>
@@ -54,6 +54,8 @@
 		<!--要生成的表-->
 		<table tableName="ums_member" domainObjectName="Member">
 			<generatedKey column="id" sqlStatement="JDBC"/>
+			<columnOverride column="id" javaType="String"/>
+			<columnOverride column="member_level_id" javaType="String"/>
 		</table>
 
 

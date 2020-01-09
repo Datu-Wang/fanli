@@ -1,4 +1,4 @@
-package com.datu.fanli.user.bean;
+package com.datu.fanli.member.bean;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -232,52 +232,52 @@ public class MemberExample {
             return (Criteria) this;
         }
 
-        public Criteria andIdEqualTo(Long value) {
+        public Criteria andIdEqualTo(String value) {
             addCriterion("id =", value, "id");
             return (Criteria) this;
         }
 
-        public Criteria andIdNotEqualTo(Long value) {
+        public Criteria andIdNotEqualTo(String value) {
             addCriterion("id <>", value, "id");
             return (Criteria) this;
         }
 
-        public Criteria andIdGreaterThan(Long value) {
+        public Criteria andIdGreaterThan(String value) {
             addCriterion("id >", value, "id");
             return (Criteria) this;
         }
 
-        public Criteria andIdGreaterThanOrEqualTo(Long value) {
+        public Criteria andIdGreaterThanOrEqualTo(String value) {
             addCriterion("id >=", value, "id");
             return (Criteria) this;
         }
 
-        public Criteria andIdLessThan(Long value) {
+        public Criteria andIdLessThan(String value) {
             addCriterion("id <", value, "id");
             return (Criteria) this;
         }
 
-        public Criteria andIdLessThanOrEqualTo(Long value) {
+        public Criteria andIdLessThanOrEqualTo(String value) {
             addCriterion("id <=", value, "id");
             return (Criteria) this;
         }
 
-        public Criteria andIdIn(List<Long> values) {
+        public Criteria andIdIn(List<String> values) {
             addCriterion("id in", values, "id");
             return (Criteria) this;
         }
 
-        public Criteria andIdNotIn(List<Long> values) {
+        public Criteria andIdNotIn(List<String> values) {
             addCriterion("id not in", values, "id");
             return (Criteria) this;
         }
 
-        public Criteria andIdBetween(Long value1, Long value2) {
+        public Criteria andIdBetween(String value1, String value2) {
             addCriterion("id between", value1, value2, "id");
             return (Criteria) this;
         }
 
-        public Criteria andIdNotBetween(Long value1, Long value2) {
+        public Criteria andIdNotBetween(String value1, String value2) {
             addCriterion("id not between", value1, value2, "id");
             return (Criteria) this;
         }
@@ -292,52 +292,52 @@ public class MemberExample {
             return (Criteria) this;
         }
 
-        public Criteria andMemberLevelIdEqualTo(Long value) {
+        public Criteria andMemberLevelIdEqualTo(String value) {
             addCriterion("member_level_id =", value, "memberLevelId");
             return (Criteria) this;
         }
 
-        public Criteria andMemberLevelIdNotEqualTo(Long value) {
+        public Criteria andMemberLevelIdNotEqualTo(String value) {
             addCriterion("member_level_id <>", value, "memberLevelId");
             return (Criteria) this;
         }
 
-        public Criteria andMemberLevelIdGreaterThan(Long value) {
+        public Criteria andMemberLevelIdGreaterThan(String value) {
             addCriterion("member_level_id >", value, "memberLevelId");
             return (Criteria) this;
         }
 
-        public Criteria andMemberLevelIdGreaterThanOrEqualTo(Long value) {
+        public Criteria andMemberLevelIdGreaterThanOrEqualTo(String value) {
             addCriterion("member_level_id >=", value, "memberLevelId");
             return (Criteria) this;
         }
 
-        public Criteria andMemberLevelIdLessThan(Long value) {
+        public Criteria andMemberLevelIdLessThan(String value) {
             addCriterion("member_level_id <", value, "memberLevelId");
             return (Criteria) this;
         }
 
-        public Criteria andMemberLevelIdLessThanOrEqualTo(Long value) {
+        public Criteria andMemberLevelIdLessThanOrEqualTo(String value) {
             addCriterion("member_level_id <=", value, "memberLevelId");
             return (Criteria) this;
         }
 
-        public Criteria andMemberLevelIdIn(List<Long> values) {
+        public Criteria andMemberLevelIdIn(List<String> values) {
             addCriterion("member_level_id in", values, "memberLevelId");
             return (Criteria) this;
         }
 
-        public Criteria andMemberLevelIdNotIn(List<Long> values) {
+        public Criteria andMemberLevelIdNotIn(List<String> values) {
             addCriterion("member_level_id not in", values, "memberLevelId");
             return (Criteria) this;
         }
 
-        public Criteria andMemberLevelIdBetween(Long value1, Long value2) {
+        public Criteria andMemberLevelIdBetween(String value1, String value2) {
             addCriterion("member_level_id between", value1, value2, "memberLevelId");
             return (Criteria) this;
         }
 
-        public Criteria andMemberLevelIdNotBetween(Long value1, Long value2) {
+        public Criteria andMemberLevelIdNotBetween(String value1, String value2) {
             addCriterion("member_level_id not between", value1, value2, "memberLevelId");
             return (Criteria) this;
         }

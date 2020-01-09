@@ -6,10 +6,13 @@ druid:
   login:
     user_name: root
     password: 111111
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.datu.fanli.member.bean
 spring:
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://127.0.0.1:3306/fanli?useUnicode=true&characterEncoding=utf8&useSSL=true&allowMultiQueries=true&serverTimezone=UTC
+    url: jdbc:mysql://127.0.0.1:3306/fanli?useUnicode=true&characterEncoding=utf8&allowMultiQueries=true&serverTimezone=UTC
     username: root
     password: 111111
     type: com.alibaba.druid.pool.DruidDataSource
@@ -33,7 +36,7 @@ spring:
 # 应⽤定义了提供⽅应⽤信息，⽤于计算依赖关系；在 dubbo-admin 或 dubbo-monitor 会显示这个
 dubbo:
   application:
-    name: fanli-user
+    name: fanli-member
   # 使⽤ zookeeper 注册中⼼暴露服务，注意要先开启 zookeeper
   # 注册中⼼id
   registry:

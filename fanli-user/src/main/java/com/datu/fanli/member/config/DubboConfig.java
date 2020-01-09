@@ -1,4 +1,4 @@
-package com.datu.fanli.user.config;
+package com.datu.fanli.member.config;
 
 import org.apache.dubbo.config.MetadataReportConfig;
 import org.springframework.context.annotation.Bean;

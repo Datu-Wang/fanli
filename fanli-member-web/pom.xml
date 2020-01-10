@@ -14,11 +14,6 @@
     <description>member-web</description>
 
     <dependencies>
-        <dependency>
-            <groupId>com.datu.fanli</groupId>
-            <artifactId>fanli-member-service</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
         <!-- fanli-api -->
         <dependency>
             <groupId>com.datu.fanli</groupId>

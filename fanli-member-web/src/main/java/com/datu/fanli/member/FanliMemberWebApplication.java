@@ -11,6 +11,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  */
 @SpringBootApplication
 @EnableDubboConfig
+@DubboComponentScan(value = "com.datu.fanli.member.service.impl")
 public class FanliMemberWebApplication {
 
     public static void main(String[] args) {

@@ -1,0 +1,65 @@
+server:
+  port: 8081
+druid:
+  allow:
+    ip: 127.0.0.1
+  login:
+    user_name: root
+    password: 111111
+mybatis:
+  # mapper.xml 映射文件
+  mapper-locations: classpath:mapper/*.xml
+  # bean实体类包
+  type-aliases-package: com.datu.fanli.bean
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/fanli?useUnicode=true&characterEncoding=utf8&allowMultiQueries=true&serverTimezone=UTC
+    username: root
+    password: 111111
+    type: com.alibaba.druid.pool.DruidDataSource
+    initial-size: 1
+    min-idle: 1
+    max-idle: 5
+    max-wait-millis: 60000
+    timeBetweenEvictionRunsMillis: 60000
+    # 配置一个连接在池中最小生存的时间，单位是毫秒
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: SELECT 1 FROM DUAL
+    testWhileIdle: true
+    testOnBorrow: true
+    testOnReturn: false
+    maxPoolPreparedStatementPerConnectionSize: 20
+    # 配置监控统计拦截的filters，去掉后监控界面sql无法统计，'wall'用于防火墙
+    filters: stat,wall
+    # 通过connectProperties属性来打开mergeSql功能；慢SQL记录
+    connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
+# dubbo config
+# 应⽤定义了提供⽅应⽤信息，⽤于计算依赖关系；在 dubbo-admin 或 dubbo-monitor 会显示这个
+dubbo:
+  application:
+    name: fanli-member-service
+  # 使⽤ zookeeper 注册中⼼暴露服务，注意要先开启 zookeeper
+  # 注册中⼼id
+  registry:
+    id: zookeeper-registry
+    # 注册中⼼协议
+    protocol: zookeeper
+    # 注册中⼼地址
+    address: 127.0.0.1:2181
+    # dubbo协议在20880端⼝暴露服务
+  # 协议名称
+  protocol:
+    name: dubbo
+    # 协议端⼝
+    port: 20881
+    # 协议访问log
+    accesslog: dubbo-access.log
+  # 重试次数
+  provider:
+    retries: 0
+    # 超时时间
+    timeout: 3000
+  # 注册监控中⼼
+  monitor:
+    protocol: registry

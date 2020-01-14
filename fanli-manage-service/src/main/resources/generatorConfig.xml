@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+<generatorConfiguration>
+
+	<context id="entmobile" targetRuntime="MyBatis3">
+		<plugin type="org.mybatis.generator.plugins.ToStringPlugin"/>
+		<plugin type="org.mybatis.generator.plugins.SerializablePlugin"/>
+
+		<commentGenerator>
+			<property name="suppressDate" value="true" />
+			<!-- remove comments -->
+			<property name="suppressAllComments" value="false" />
+		</commentGenerator>
+
+		<!-- jdbc driver 用户名 密码 数据库名 的配置-->
+		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
+						connectionURL="jdbc:mysql://127.0.0.1:3306/fanli?useUnicode=true&amp;characterEncoding=utf8&amp;allowMultiQueries=true&amp;serverTimezone=UTC"
+						userId="root" password="111111" />
+
+		<!-- java type resolver -->
+		<javaTypeResolver>
+			<property name="forceBigDecimals" value="false" />
+		</javaTypeResolver>
+
+		<!-- gem entity -->
+		<!-- data -->
+		<!--在此修改生成路径-->
+		<javaModelGenerator targetPackage="com.datu.fanli.bean"
+							targetProject="./src/main/java">
+			<property name="enableSubPackages" value="true" />
+			<property name="trimStrings" value="false" />
+			<property name="constructorBased" value="true"/>
+		</javaModelGenerator>
+
+		<!-- gem annotated mapper -->
+		<!-- data -->
+		<!--在此修改生成路径-->
+		<javaClientGenerator type="ANNOTATEDMAPPER"
+							 targetPackage="com.datu.fanli.manage.dao"
+							 targetProject="./src/main/java">
+			<property name="enableSubPackages" value="true" />
+		</javaClientGenerator>
+
+		<!--要生成的表-->
+<!--		<table tableName="pms_product_image" domainObjectName="ProductImage">-->
+<!--			<generatedKey column="id" sqlStatement="JDBC"/>-->
+<!--			<columnOverride column="id" javaType="String"/>-->
+<!--			<columnOverride column="product_id" javaType="String"/>-->
+<!--		</table>-->
+<!--		<table tableName="pms_product_info" domainObjectName="ProductInfo">-->
+<!--			<generatedKey column="id" sqlStatement="JDBC"/>-->
+<!--			<columnOverride column="id" javaType="String"/>-->
+<!--			<columnOverride column="catalog3Id" javaType="String"/>-->
+<!--			<columnOverride column="tm_id" javaType="String"/>-->
+<!--		</table>-->
+<!--		<table tableName="pms_product_sale_attr" domainObjectName="ProductSaleAttr">-->
+<!--			<generatedKey column="id" sqlStatement="JDBC"/>-->
+<!--			<columnOverride column="id" javaType="String"/>-->
+<!--			<columnOverride column="product_id" javaType="String"/>-->
+<!--			<columnOverride column="sale_attr_id" javaType="String"/>-->
+<!--		</table>-->
+<!--		<table tableName="pms_product_sale_attr_value" domainObjectName="ProductSaleAttrValue">-->
+<!--			<generatedKey column="id" sqlStatement="JDBC"/>-->
+<!--			<columnOverride column="id" javaType="String"/>-->
+<!--			<columnOverride column="product_id" javaType="String"/>-->
+<!--			<columnOverride column="sale_attr_id" javaType="String"/>-->
+<!--		</table>-->
+		<table tableName="pms_product_verify_record" domainObjectName="ProductVerifyRecord">
+			<generatedKey column="id" sqlStatement="JDBC"/>
+			<columnOverride column="id" javaType="String"/>
+			<columnOverride column="product_id" javaType="String"/>
+			<columnOverride column="status" javaType="String"/>
+		</table>
+<!--		<table tableName="pms_base_sale_attr" domainObjectName="BaseSaleAttr">-->
+<!--			<generatedKey column="id" sqlStatement="JDBC"/>-->
+<!--			<columnOverride column="id" javaType="String"/>-->
+<!--		</table>-->
+
+
+
+
+	</context>
+</generatorConfiguration>

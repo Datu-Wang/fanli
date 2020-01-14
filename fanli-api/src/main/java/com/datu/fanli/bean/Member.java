@@ -1,5 +1,9 @@
 package com.datu.fanli.bean;
 
+import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import java.io.Serializable;
 import java.util.Date;
 
@@ -15,6 +19,9 @@ public class Member implements Serializable {
      *
      * @mbg.generated
      */
+    @Id
+    @Column
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String id;
 
     /**
@@ -24,6 +31,7 @@ public class Member implements Serializable {
      *
      * @mbg.generated
      */
+    @Column
     private String memberLevelId;
 
     /**
@@ -33,6 +41,7 @@ public class Member implements Serializable {
      *
      * @mbg.generated
      */
+    @Column
     private String username;
 
     /**
@@ -42,6 +51,7 @@ public class Member implements Serializable {
      *
      * @mbg.generated
      */
+    @Column
     private String password;
 
     /**
@@ -51,6 +61,7 @@ public class Member implements Serializable {
      *
      * @mbg.generated
      */
+    @Column
     private String nickname;
 
     /**
@@ -60,6 +71,7 @@ public class Member implements Serializable {
      *
      * @mbg.generated
      */
+    @Column
     private String phone;
 
     /**
@@ -69,6 +81,7 @@ public class Member implements Serializable {
      *
      * @mbg.generated
      */
+    @Column
     private Integer status;
 
     /**
@@ -78,6 +91,7 @@ public class Member implements Serializable {
      *
      * @mbg.generated
      */
+    @Column
     private Date createTime;
 
     /**
@@ -87,6 +101,7 @@ public class Member implements Serializable {
      *
      * @mbg.generated
      */
+    @Column
     private String icon;
 
     /**
@@ -96,6 +111,7 @@ public class Member implements Serializable {
      *
      * @mbg.generated
      */
+    @Column
     private Integer gender;
 
     /**
@@ -105,6 +121,7 @@ public class Member implements Serializable {
      *
      * @mbg.generated
      */
+    @Column
     private Date birthday;
 
     /**
@@ -114,6 +131,7 @@ public class Member implements Serializable {
      *
      * @mbg.generated
      */
+    @Column
     private String city;
 
     /**
@@ -123,6 +141,7 @@ public class Member implements Serializable {
      *
      * @mbg.generated
      */
+    @Column
     private String job;
 
     /**

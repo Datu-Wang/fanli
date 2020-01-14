@@ -1,5 +1,9 @@
 package com.datu.fanli.bean;
 
+import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import java.io.Serializable;
 
 public class MemberReceiveAddress implements Serializable {
@@ -10,6 +14,9 @@ public class MemberReceiveAddress implements Serializable {
      *
      * @mbg.generated
      */
+    @Id
+    @Column
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String id;
 
     /**
@@ -19,6 +26,7 @@ public class MemberReceiveAddress implements Serializable {
      *
      * @mbg.generated
      */
+    @Column
     private String memberId;
 
     /**
@@ -28,6 +36,7 @@ public class MemberReceiveAddress implements Serializable {
      *
      * @mbg.generated
      */
+    @Column
     private String name;
 
     /**
@@ -37,6 +46,7 @@ public class MemberReceiveAddress implements Serializable {
      *
      * @mbg.generated
      */
+    @Column
     private String phoneNumber;
 
     /**
@@ -46,6 +56,7 @@ public class MemberReceiveAddress implements Serializable {
      *
      * @mbg.generated
      */
+    @Column
     private Integer defaultStatus;
 
     /**
@@ -55,6 +66,7 @@ public class MemberReceiveAddress implements Serializable {
      *
      * @mbg.generated
      */
+    @Column
     private String postCode;
 
     /**
@@ -64,6 +76,7 @@ public class MemberReceiveAddress implements Serializable {
      *
      * @mbg.generated
      */
+    @Column
     private String province;
 
     /**
@@ -73,6 +86,7 @@ public class MemberReceiveAddress implements Serializable {
      *
      * @mbg.generated
      */
+    @Column
     private String city;
 
     /**
@@ -82,6 +96,7 @@ public class MemberReceiveAddress implements Serializable {
      *
      * @mbg.generated
      */
+    @Column
     private String region;
 
     /**
@@ -91,6 +106,7 @@ public class MemberReceiveAddress implements Serializable {
      *
      * @mbg.generated
      */
+    @Column
     private String detailAddress;
 
     /**

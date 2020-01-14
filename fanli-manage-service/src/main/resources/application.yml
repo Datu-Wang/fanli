@@ -1,5 +1,5 @@
 server:
-  port: 8081
+  port: 8083
 druid:
   allow:
     ip: 127.0.0.1
@@ -7,8 +7,6 @@ druid:
     user_name: root
     password: 111111
 mybatis:
-  # mapper.xml 映射文件
-  mapper-locations: classpath:mapper/*.xml
   # bean实体类包
   type-aliases-package: com.datu.fanli.bean
 spring:
@@ -38,7 +36,7 @@ spring:
 # 应⽤定义了提供⽅应⽤信息，⽤于计算依赖关系；在 dubbo-admin 或 dubbo-monitor 会显示这个
 dubbo:
   application:
-    name: fanli-member-service
+    name: fanli-manage-service
   # 使⽤ zookeeper 注册中⼼暴露服务，注意要先开启 zookeeper
   # 注册中⼼id
   registry:
@@ -52,7 +50,7 @@ dubbo:
   protocol:
     name: dubbo
     # 协议端⼝
-    port: 20881
+    port: 20883
     # 协议访问log
     accesslog: dubbo-access.log
   # 重试次数
@@ -64,4 +62,4 @@ dubbo:
   monitor:
     protocol: registry
   scan:
-    base-packages: com.datu.fanli.member.service.impl
+    base-packages: com.datu.fanli.manage.service.impl

@@ -1,8 +1,8 @@
 server:
-  port: 8082
+  port: 8084
 dubbo:
   application:
-    name: fanli-member-web
+    name: fanli-manage-web
   # 使⽤ zookeeper 注册中⼼暴露服务，注意要先开启 zookeeper
   # 注册中⼼id
   registry:
@@ -16,7 +16,7 @@ dubbo:
   protocol:
     name: dubbo
     # 协议端⼝
-    port: 20882
+    port: 20884
     # 协议访问log
     accesslog: dubbo-access.log
   # 重试次数
@@ -28,4 +28,4 @@ dubbo:
   monitor:
     protocol: registry
   scan:
-    base-packages: com.datu.fanli.member.service.impl
+    base-packages: com.datu.fanli.manage.service.impl

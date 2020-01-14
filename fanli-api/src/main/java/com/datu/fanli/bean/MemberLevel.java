@@ -1,5 +1,9 @@
 package com.datu.fanli.bean;
 
+import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import java.io.Serializable;
 import java.math.BigDecimal;
 
@@ -11,6 +15,9 @@ public class MemberLevel implements Serializable {
      *
      * @mbg.generated
      */
+    @Id
+    @Column
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String id;
 
     /**
@@ -20,6 +27,7 @@ public class MemberLevel implements Serializable {
      *
      * @mbg.generated
      */
+    @Column
     private String name;
 
     /**
@@ -29,6 +37,7 @@ public class MemberLevel implements Serializable {
      *
      * @mbg.generated
      */
+    @Column
     private Integer growthPoint;
 
     /**
@@ -38,6 +47,7 @@ public class MemberLevel implements Serializable {
      *
      * @mbg.generated
      */
+    @Column
     private Integer defaultStatus;
 
     /**
@@ -47,6 +57,7 @@ public class MemberLevel implements Serializable {
      *
      * @mbg.generated
      */
+    @Column
     private BigDecimal freeFreightPoint;
 
     /**
@@ -56,6 +67,7 @@ public class MemberLevel implements Serializable {
      *
      * @mbg.generated
      */
+    @Column
     private Integer commentGrowthPoint;
 
     /**
@@ -65,6 +77,7 @@ public class MemberLevel implements Serializable {
      *
      * @mbg.generated
      */
+    @Column
     private Integer priviledgeFreeFreight;
 
     /**
@@ -74,6 +87,7 @@ public class MemberLevel implements Serializable {
      *
      * @mbg.generated
      */
+    @Column
     private Integer priviledgeSignIn;
 
     /**
@@ -83,6 +97,7 @@ public class MemberLevel implements Serializable {
      *
      * @mbg.generated
      */
+    @Column
     private Integer priviledgeComment;
 
     /**
@@ -92,6 +107,7 @@ public class MemberLevel implements Serializable {
      *
      * @mbg.generated
      */
+    @Column
     private Integer priviledgePromotion;
 
     /**
@@ -101,6 +117,7 @@ public class MemberLevel implements Serializable {
      *
      * @mbg.generated
      */
+    @Column
     private Integer priviledgeMemberPrice;
 
     /**
@@ -110,6 +127,7 @@ public class MemberLevel implements Serializable {
      *
      * @mbg.generated
      */
+    @Column
     private Integer priviledgeBirthday;
 
     /**
@@ -119,6 +137,7 @@ public class MemberLevel implements Serializable {
      *
      * @mbg.generated
      */
+    @Column
     private String note;
 
     /**

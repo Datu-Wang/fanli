@@ -20,8 +20,6 @@ public class MemberServiceImpl implements IMemberService {
 
     @Override
     public List<Member> getAllMember() {
-        MemberExample example = new MemberExample();
-        example.createCriteria();
-        return memberMapper.selectByExample(example);
+        return memberMapper.selectByExample(null);
     }
 }

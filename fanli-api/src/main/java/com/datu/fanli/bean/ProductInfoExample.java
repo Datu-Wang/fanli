@@ -404,52 +404,52 @@ public class ProductInfoExample {
             return (Criteria) this;
         }
 
-        public Criteria andCatalog3IdEqualTo(Long value) {
+        public Criteria andCatalog3IdEqualTo(String value) {
             addCriterion("catalog3_id =", value, "catalog3Id");
             return (Criteria) this;
         }
 
-        public Criteria andCatalog3IdNotEqualTo(Long value) {
+        public Criteria andCatalog3IdNotEqualTo(String value) {
             addCriterion("catalog3_id <>", value, "catalog3Id");
             return (Criteria) this;
         }
 
-        public Criteria andCatalog3IdGreaterThan(Long value) {
+        public Criteria andCatalog3IdGreaterThan(String value) {
             addCriterion("catalog3_id >", value, "catalog3Id");
             return (Criteria) this;
         }
 
-        public Criteria andCatalog3IdGreaterThanOrEqualTo(Long value) {
+        public Criteria andCatalog3IdGreaterThanOrEqualTo(String value) {
             addCriterion("catalog3_id >=", value, "catalog3Id");
             return (Criteria) this;
         }
 
-        public Criteria andCatalog3IdLessThan(Long value) {
+        public Criteria andCatalog3IdLessThan(String value) {
             addCriterion("catalog3_id <", value, "catalog3Id");
             return (Criteria) this;
         }
 
-        public Criteria andCatalog3IdLessThanOrEqualTo(Long value) {
+        public Criteria andCatalog3IdLessThanOrEqualTo(String value) {
             addCriterion("catalog3_id <=", value, "catalog3Id");
             return (Criteria) this;
         }
 
-        public Criteria andCatalog3IdIn(List<Long> values) {
+        public Criteria andCatalog3IdIn(List<String> values) {
             addCriterion("catalog3_id in", values, "catalog3Id");
             return (Criteria) this;
         }
 
-        public Criteria andCatalog3IdNotIn(List<Long> values) {
+        public Criteria andCatalog3IdNotIn(List<String> values) {
             addCriterion("catalog3_id not in", values, "catalog3Id");
             return (Criteria) this;
         }
 
-        public Criteria andCatalog3IdBetween(Long value1, Long value2) {
+        public Criteria andCatalog3IdBetween(String value1, String value2) {
             addCriterion("catalog3_id between", value1, value2, "catalog3Id");
             return (Criteria) this;
         }
 
-        public Criteria andCatalog3IdNotBetween(Long value1, Long value2) {
+        public Criteria andCatalog3IdNotBetween(String value1, String value2) {
             addCriterion("catalog3_id not between", value1, value2, "catalog3Id");
             return (Criteria) this;
         }

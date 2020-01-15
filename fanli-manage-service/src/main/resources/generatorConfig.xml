@@ -47,12 +47,12 @@
 <!--			<columnOverride column="id" javaType="String"/>-->
 <!--			<columnOverride column="product_id" javaType="String"/>-->
 <!--		</table>-->
-<!--		<table tableName="pms_product_info" domainObjectName="ProductInfo">-->
-<!--			<generatedKey column="id" sqlStatement="JDBC"/>-->
-<!--			<columnOverride column="id" javaType="String"/>-->
-<!--			<columnOverride column="catalog3Id" javaType="String"/>-->
-<!--			<columnOverride column="tm_id" javaType="String"/>-->
-<!--		</table>-->
+		<table tableName="pms_product_info" domainObjectName="ProductInfo">
+			<generatedKey column="id" sqlStatement="JDBC"/>
+			<columnOverride column="id" javaType="String"/>
+			<columnOverride column="catalog3_id" javaType="String"/>
+			<columnOverride column="tm_id" javaType="String"/>
+		</table>
 <!--		<table tableName="pms_product_sale_attr" domainObjectName="ProductSaleAttr">-->
 <!--			<generatedKey column="id" sqlStatement="JDBC"/>-->
 <!--			<columnOverride column="id" javaType="String"/>-->
@@ -65,12 +65,12 @@
 <!--			<columnOverride column="product_id" javaType="String"/>-->
 <!--			<columnOverride column="sale_attr_id" javaType="String"/>-->
 <!--		</table>-->
-		<table tableName="pms_product_verify_record" domainObjectName="ProductVerifyRecord">
-			<generatedKey column="id" sqlStatement="JDBC"/>
-			<columnOverride column="id" javaType="String"/>
-			<columnOverride column="product_id" javaType="String"/>
-			<columnOverride column="status" javaType="String"/>
-		</table>
+<!--		<table tableName="pms_product_verify_record" domainObjectName="ProductVerifyRecord">-->
+<!--			<generatedKey column="id" sqlStatement="JDBC"/>-->
+<!--			<columnOverride column="id" javaType="String"/>-->
+<!--			<columnOverride column="product_id" javaType="String"/>-->
+<!--			<columnOverride column="status" javaType="String"/>-->
+<!--		</table>-->
 <!--		<table tableName="pms_base_sale_attr" domainObjectName="BaseSaleAttr">-->
 <!--			<generatedKey column="id" sqlStatement="JDBC"/>-->
 <!--			<columnOverride column="id" javaType="String"/>-->

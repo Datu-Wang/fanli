@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.datu.fanli</groupId>
+        <artifactId>fanli-parent</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>fanli-manage-service</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>fanli-manage-service</name>
+    <description>manage-service</description>
+
+    <dependencies>
+        <!-- fanli-api -->
+        <dependency>
+            <groupId>com.datu.fanli</groupId>
+            <version>1.0-SNAPSHOT</version>
+            <artifactId>fanli-api</artifactId>
+        </dependency>
+        <!-- fanli-service-util -->
+        <dependency>
+            <groupId>com.datu.fanli</groupId>
+            <artifactId>fanli-service-util</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.mybatis.generator</groupId>
+                <artifactId>mybatis-generator-maven-plugin</artifactId>
+                <version>1.4.0</version>
+                <dependencies>
+                    <dependency>
+                        <groupId>mysql</groupId>
+                        <artifactId>mysql-connector-java</artifactId>
+                        <version>${mysql.connector.version}</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

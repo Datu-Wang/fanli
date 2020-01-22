@@ -1,10 +1,13 @@
 package com.datu.fanli.bean;
 
-import javax.persistence.Transient;
+import javax.persistence.*;
 import java.io.Serializable;
 
+/**
+ * @author: datu
+ * @date: 2020/1/17
+ */
 public class ProductImage implements Serializable {
-    public static final String TO_KEEP = "0";
     public static final String TO_ADD = "1";
     public static final String TO_UPDATE = "2";
     public static final String TO_DELETE = "3";
@@ -15,6 +18,9 @@ public class ProductImage implements Serializable {
      *
      * @mbg.generated
      */
+    @Id
+    @Column
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String id;
 
     /**
@@ -24,6 +30,7 @@ public class ProductImage implements Serializable {
      *
      * @mbg.generated
      */
+    @Column
     private String productId;
 
     /**
@@ -33,6 +40,7 @@ public class ProductImage implements Serializable {
      *
      * @mbg.generated
      */
+    @Column
     private String imgName;
 
     /**
@@ -42,6 +50,7 @@ public class ProductImage implements Serializable {
      *
      * @mbg.generated
      */
+    @Column
     private String imgUrl;
 
     @Transient

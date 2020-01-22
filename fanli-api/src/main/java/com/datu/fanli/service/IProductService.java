@@ -20,6 +20,13 @@ public interface IProductService {
     List<ProductInfo> getProductList(String catalog3Id);
 
     /**
+     * 根据id获取ProductInfo
+     * @param productInfoId 产品Id
+     * @return ProductInfo实体类, 以及相应的<strong>图片, 产品属性 和 产品属性值</strong>
+     */
+    ProductInfo getProductInfoById(String productInfoId);
+
+    /**
      * 级联保存或更新产品信息
      * @param productInfo 产品信息实体类
      */
@@ -45,9 +52,10 @@ public interface IProductService {
 
     /**
      * 获取基本销售属性列表
+     * @param catalog3Id
      * @return 基本销售属性列表
      */
-    List<BaseSaleAttr> getBaseSaleAttrList();
+    List<BaseSaleAttr> getBaseSaleAttrList(String catalog3Id);
 
     /**
      * 获取产品销售属性列表
@@ -62,4 +70,6 @@ public interface IProductService {
      * @return 产品图片信息列表
      */
     List<ProductImage> getProductImageList(String productInfoId);
+
+    void saveProductImage(String name, String url);
 }

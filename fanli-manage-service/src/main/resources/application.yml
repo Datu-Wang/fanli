@@ -32,6 +32,8 @@ spring:
     filters: stat,wall
     # 通过connectProperties属性来打开mergeSql功能；慢SQL记录
     connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
+  mvc:
+    static-path-pattern: /**
 # dubbo config
 # 应⽤定义了提供⽅应⽤信息，⽤于计算依赖关系；在 dubbo-admin 或 dubbo-monitor 会显示这个
 dubbo:
@@ -63,3 +65,9 @@ dubbo:
     protocol: registry
   scan:
     base-packages: com.datu.fanli.manage.service.impl
+  config-center:
+    # 配置中心地址
+    address: zookeeper://127.0.0.1:2181
+  metadata-report:
+    # 元数据中心地址
+    address: zookeeper://127.0.0.1:2181

@@ -52,7 +52,13 @@ public class CatalogServiceImpl implements ICatalogService {
     public List<BaseAttrInfo> getBaseAttrInfoByCatalog3Id(String catalog3Id) {
         BaseAttrInfoExample example = new BaseAttrInfoExample();
         example.createCriteria().andCatalog3IdEqualTo(catalog3Id);
-        return baseAttrInfoMapper.selectByExample(example);
+        List<BaseAttrInfo> baseAttrInfoList = baseAttrInfoMapper.selectByExample(example);
+        baseAttrInfoList.stream().spliterator().forEachRemaining(baseAttrInfo -> {
+            BaseAttrValueExample baseAttrValueExample = new BaseAttrValueExample();
+            baseAttrValueExample.createCriteria().andAttrIdEqualTo(baseAttrInfo.getId());
+            baseAttrInfo.setAttrValueList(baseAttrValueMapper.selectByExample(baseAttrValueExample));
+        });
+        return baseAttrInfoList;
     }
 
     @Override
@@ -64,9 +70,9 @@ public class CatalogServiceImpl implements ICatalogService {
 
     @Override
     public int addAttrInfo(BaseAttrInfo baseAttrInfo) {
+        String attrInfoId = String.valueOf(baseAttrInfoMapper.insert(baseAttrInfo));
         // 逐个添加属性值
-        addAttrValueInList(baseAttrInfo.getAttrValueList());
-        baseAttrInfoMapper.insert(baseAttrInfo);
+        addAttrValueInList(baseAttrInfo.getAttrValueList(), attrInfoId);
         return 0;
     }
 
@@ -74,7 +80,7 @@ public class CatalogServiceImpl implements ICatalogService {
      * 将一个列表中的<strong>属性值</strong>添加入库
      * @param baseAttrValues 属性值列表
      */
-    private void addAttrValueInList(List<BaseAttrValue> baseAttrValues) {
+    private void addAttrValueInList(List<BaseAttrValue> baseAttrValues, String attrInfoId) {
 //        baseAttrValues.stream().spliterator().forEachRemaining(baseAttrValueMapper::insert);
         baseAttrValues.stream().spliterator().forEachRemaining(baseAttrValue -> {
             if (baseAttrValue.getId() != null) {
@@ -82,6 +88,7 @@ public class CatalogServiceImpl implements ICatalogService {
                 baseAttrValueMapper.insertWithId(baseAttrValue);
             } else {
                 // 无id的情况
+                baseAttrValue.setAttrId(attrInfoId);
                 baseAttrValueMapper.insert(baseAttrValue);
             }
         });
@@ -108,7 +115,7 @@ public class CatalogServiceImpl implements ICatalogService {
     public int updateAttrInfo(BaseAttrInfo baseAttrInfo) {
         baseAttrInfoMapper.updateByPrimaryKey(baseAttrInfo);
         deleteAttrValueByAttrInfoId(baseAttrInfo.getId());
-        addAttrValueInList(baseAttrInfo.getAttrValueList());
+        addAttrValueInList(baseAttrInfo.getAttrValueList(), baseAttrInfo.getId());
         return 1;
     }
 

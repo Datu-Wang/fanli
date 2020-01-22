@@ -3,8 +3,11 @@ package com.datu.fanli.bean;
 import javax.persistence.*;
 import java.io.Serializable;
 
+/**
+ * @author: datu
+ * @date: 2020/1/15
+ */
 public class ProductSaleAttrValue implements Serializable {
-    public static final String TO_KEEP = "0";
     public static final String TO_ADD = "1";
     public static final String TO_UPDATE = "2";
     public static final String TO_DELETE = "3";

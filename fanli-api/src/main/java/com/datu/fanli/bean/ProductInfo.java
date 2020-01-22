@@ -1,6 +1,6 @@
 package com.datu.fanli.bean;
 
-import javax.persistence.Transient;
+import javax.persistence.*;
 import java.io.Serializable;
 import java.util.List;
 
@@ -12,6 +12,9 @@ public class ProductInfo implements Serializable {
      *
      * @mbg.generated
      */
+    @Id
+    @Column
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String id;
 
     /**
@@ -21,6 +24,7 @@ public class ProductInfo implements Serializable {
      *
      * @mbg.generated
      */
+    @Column
     private String productName;
 
     /**
@@ -30,6 +34,7 @@ public class ProductInfo implements Serializable {
      *
      * @mbg.generated
      */
+    @Column
     private String description;
 
     /**
@@ -39,6 +44,7 @@ public class ProductInfo implements Serializable {
      *
      * @mbg.generated
      */
+    @Column
     private String catalog3Id;
 
     /**
@@ -48,6 +54,7 @@ public class ProductInfo implements Serializable {
      *
      * @mbg.generated
      */
+    @Column
     private String tmId;
 
     @Transient

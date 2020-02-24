@@ -15,7 +15,7 @@ public class SkuInfo implements Serializable {
     @Id
     @Column
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private String id;
 
     /**
      *
@@ -133,7 +133,7 @@ public class SkuInfo implements Serializable {
      *
      * @mbg.generated
      */
-    public SkuInfo(Long id, String productId, Double price, String skuName, String skuDesc, Double weight, String tmId, String catalog3Id, String skuDefaultImg) {
+    public SkuInfo(String id, String productId, Double price, String skuName, String skuDesc, Double weight, String tmId, String catalog3Id, String skuDefaultImg) {
         this.id = id;
         this.productId = productId;
         this.price = price;
@@ -163,7 +163,7 @@ public class SkuInfo implements Serializable {
      *
      * @mbg.generated
      */
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
@@ -175,7 +175,7 @@ public class SkuInfo implements Serializable {
      *
      * @mbg.generated
      */
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 

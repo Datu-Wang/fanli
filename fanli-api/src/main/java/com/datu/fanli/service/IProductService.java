@@ -58,7 +58,7 @@ public interface IProductService {
     List<BaseSaleAttr> getBaseSaleAttrList(String catalog3Id);
 
     /**
-     * 获取产品销售属性列表
+     * 获取产品销售属性列表 以及对应的ProductSaleAttrValueList
      * @param productInfoId  产品信息Id
      * @return 产品销售属性列表
      */
@@ -70,6 +70,4 @@ public interface IProductService {
      * @return 产品图片信息列表
      */
     List<ProductImage> getProductImageList(String productInfoId);
-
-    void saveProductImage(String name, String url);
 }

@@ -4,14 +4,10 @@ import com.datu.fanli.bean.*;
 import com.datu.fanli.manage.dao.*;
 import com.datu.fanli.service.IProductService;
 import org.apache.dubbo.config.annotation.Service;
-import org.springframework.web.multipart.MultipartFile;
 
 import javax.annotation.Resource;
 import java.io.File;
-import java.io.IOException;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 /**
  * @author: datu
@@ -199,7 +195,14 @@ public class ProductServiceImpl implements IProductService {
     public List<ProductSaleAttr> getProductSaleAttrList(String productInfoId) {
         ProductSaleAttrExample example = new ProductSaleAttrExample();
         example.createCriteria().andProductIdEqualTo(productInfoId);
-        return productSaleAttrMapper.selectByExample(example);
+        List<ProductSaleAttr> productSaleAttrList = productSaleAttrMapper.selectByExample(example);
+        productSaleAttrList.stream().spliterator().forEachRemaining(productSaleAttr -> {
+            ProductSaleAttrValueExample productSaleAttrValueExample = new ProductSaleAttrValueExample();
+            productSaleAttrValueExample.createCriteria().andProductIdEqualTo(productInfoId)
+                    .andSaleAttrIdEqualTo(productSaleAttr.getSaleAttrId());
+            productSaleAttr.setProductSaleAttrValueList(productSaleAttrValueMapper.selectByExample(productSaleAttrValueExample));
+        });
+        return productSaleAttrList;
     }
 
     @Override
@@ -208,15 +211,4 @@ public class ProductServiceImpl implements IProductService {
         example.createCriteria().andProductIdEqualTo(productInfoId);
         return productImageMapper.selectByExample(example);
     }
-
-    @Override
-    public void saveProductImage(String name, String url) {
-        ProductImage image = new ProductImage();
-        image.setImgName(name);
-        image.setImgUrl(url);
-        image.setProductId("24");
-        productImageMapper.insert(image);
-    }
-
-
 }

@@ -23,4 +23,17 @@ public interface ISkuService {
      * @return
      */
     SkuInfo getSkuInfoById(String skuId);
+
+    /**
+     * 更新或者插入一个skuInfo实体,以及对应的SkuValueList和SkuSaleValueList
+     * @param skuInfo skuInfo实体
+     * @return "success"
+     */
+    String saveSkuInfo(SkuInfo skuInfo);
+
+    /**
+     * 删除skuInfo实体以及相关信息
+     * @param skuId id
+     */
+    void deleteSkuInfo(String skuId);
 }

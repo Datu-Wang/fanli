@@ -69,7 +69,7 @@ public class ProductController {
 
     @RequestMapping(value = "/fileUpload", method = RequestMethod.POST)
     @ResponseBody
-    public Map<String, String> upload(MultipartFile file) throws IOException {
+    public Map<String, String> upload(MultipartFile file, @RequestParam("productId") String productId) throws IOException {
 
         Map<String, String> map = new HashMap<>(2);
         // 获取文件名
@@ -78,7 +78,6 @@ public class ProductController {
         String accessUrl = staticAccessPath + fileName;
         File dest = new File(url);
         file.transferTo(dest);
-        productService.saveProductImage(fileName, accessUrl);
         map.put("name", fileName);
         map.put("url", accessUrl);
         return map;

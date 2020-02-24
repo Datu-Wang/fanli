@@ -1,8 +1,6 @@
 package com.datu.fanli.manage.service.impl;
 
-import com.datu.fanli.bean.SkuAttrValue;
-import com.datu.fanli.bean.SkuInfo;
-import com.datu.fanli.bean.SkuSaleAttrValue;
+import com.datu.fanli.bean.*;
 import com.datu.fanli.manage.dao.SkuAttrValueMapper;
 import com.datu.fanli.manage.dao.SkuInfoMapper;
 import com.datu.fanli.manage.dao.SkuSaleAttrValueMapper;
@@ -29,11 +27,69 @@ public class SkuServiceImpl implements ISkuService {
 
     @Override
     public List<SkuInfo> getSkuListByProductInfoId(String productInfoId) {
-        return null;
+        SkuInfoExample example = new SkuInfoExample();
+        example.createCriteria().andProductIdEqualTo(productInfoId);
+        return skuInfoMapper.selectByExample(example);
     }
 
     @Override
     public SkuInfo getSkuInfoById(String skuId) {
-        return null;
+        SkuInfo skuInfo = skuInfoMapper.selectByPrimaryKey(skuId);
+
+        SkuSaleAttrValueExample skuSaleAttrValueExample = new SkuSaleAttrValueExample();
+        skuSaleAttrValueExample.createCriteria().andSkuIdEqualTo(skuId);
+        skuInfo.setSkuSaleAttrValueList(skuSaleAttrValueMapper.selectByExample(skuSaleAttrValueExample));
+
+        SkuAttrValueExample skuAttrValueExample = new SkuAttrValueExample();
+        skuAttrValueExample.createCriteria().andSkuIdEqualTo(skuId);
+        skuInfo.setSkuAttrValueList(skuAttrValueMapper.selectByExample(skuAttrValueExample));
+        return skuInfo;
+    }
+
+    @Override
+    public String saveSkuInfo(SkuInfo skuInfo) {
+        if (skuInfo.getId() != null) {
+            // 更新
+            skuInfoMapper.updateByPrimaryKey(skuInfo);
+            skuInfo.getSkuAttrValueList().stream().spliterator().forEachRemaining(
+                    skuAttrValue -> {
+                        skuAttrValueMapper.updateByPrimaryKey(skuAttrValue);
+                    }
+            );
+            skuInfo.getSkuSaleAttrValueList().stream().spliterator().forEachRemaining(
+                    skuSaleAttrValue -> {
+                        skuSaleAttrValueMapper.updateByPrimaryKey(skuSaleAttrValue);
+                    }
+            );
+        } else {
+            // 插入
+            String skuInfoId = String.valueOf(skuInfoMapper.insert(skuInfo));
+            skuInfo.getSkuAttrValueList().stream().spliterator().forEachRemaining(
+                    skuAttrValue -> {
+                        skuAttrValue.setSkuId(skuInfoId);
+                        skuAttrValueMapper.insert(skuAttrValue);
+                    }
+            );
+            skuInfo.getSkuSaleAttrValueList().stream().spliterator().forEachRemaining(
+                    skuSaleAttrValue -> {
+                        skuSaleAttrValue.setSkuId(skuInfoId);
+                        skuSaleAttrValueMapper.insert(skuSaleAttrValue);
+                    }
+            );
+        }
+        return "success";
+    }
+
+    @Override
+    public void deleteSkuInfo(String skuId) {
+        SkuSaleAttrValueExample skuSaleAttrValueExample = new SkuSaleAttrValueExample();
+        skuSaleAttrValueExample.createCriteria().andSkuIdEqualTo(skuId);
+        skuSaleAttrValueMapper.deleteByExample(skuSaleAttrValueExample);
+
+        SkuAttrValueExample skuAttrValueExample = new SkuAttrValueExample();
+        skuAttrValueExample.createCriteria().andSkuIdEqualTo(skuId);
+        skuAttrValueMapper.deleteByExample(skuAttrValueExample);
+
+        skuInfoMapper.deleteByPrimaryKey(skuId);
     }
 }

@@ -10,7 +10,7 @@ public class SkuSaleAttrValue implements Serializable {
      *
      * @mbg.generated
      */
-    private Long id;
+    private String id;
 
     /**
      *
@@ -71,7 +71,7 @@ public class SkuSaleAttrValue implements Serializable {
      *
      * @mbg.generated
      */
-    public SkuSaleAttrValue(Long id, String skuId, String saleAttrId, String saleAttrValueId, String saleAttrName, String saleAttrValueName) {
+    public SkuSaleAttrValue(String id, String skuId, String saleAttrId, String saleAttrValueId, String saleAttrName, String saleAttrValueName) {
         this.id = id;
         this.skuId = skuId;
         this.saleAttrId = saleAttrId;
@@ -98,7 +98,7 @@ public class SkuSaleAttrValue implements Serializable {
      *
      * @mbg.generated
      */
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
@@ -110,7 +110,7 @@ public class SkuSaleAttrValue implements Serializable {
      *
      * @mbg.generated
      */
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 

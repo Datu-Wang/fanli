@@ -71,6 +71,11 @@ public class CatalogController {
         return 1;
     }
 
+    /**
+     * 用JSONObject来避免@RequestParam接收不到参数
+     * @param param
+     * @return
+     */
     @RequestMapping(value = "/changeAttrInfoStatus", method = RequestMethod.POST)
     @ResponseBody
     public int changeAttrInfoStatus(@RequestBody JSONObject param) {
